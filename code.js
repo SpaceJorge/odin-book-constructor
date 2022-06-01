@@ -20,7 +20,7 @@ function BadBook(title, author, pages, isRead, comment){
     Book.call(this, title, author, pages, isRead, comment)
     this.comment = comment;
 }
-Object.setPrototypeOf(BadBook.prototype, Book.prototype);
+Object.setPrototypeOf(BadBook.prototype, Book.prototype); // Or BadBook.prototype = Object.create(Book.prototype);
 BadBook.prototype.badMouth = function() {
     return `What i really think about ${this.title} by ${this.author} is: ${this.comment}. Why is it ${this.pages} pages long? The mystery remains.`;
 }
