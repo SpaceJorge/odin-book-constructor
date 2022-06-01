@@ -3,30 +3,30 @@ function Book(title,author,pages,isRead){
     this.author=author;
     this.pages=pages;
     this.isRead=isRead;
-    this.info = function(){
-        let string = this.title + " by " + this.author + ", " + this.pages + " pages, " ;
-        if (this.isRead == true){
-            return string + "already read.";
-        }
-        return string + "not read yet.";
-    }
-    
-    
-}const farenheit = new Book("Farenheit 451","Ray Bradbury","123",true);
-console.log(farenheit.info());
-
-/* info() doesnt work */
-function BadBook(comment){
-    this.comment = comment;
 }
 
-const harryPotter = new BadBook("I wouldn't touch this book.");
+Book.prototype.info = function(){
+    let string = this.title + " by " + this.author + ", " + this.pages + " pages, " ;
+    if (this.isRead == true){
+        return string + "already read.";
+    }
+    return string + "not read yet.";
+}   
+
+const farenheit = new Book("Farenheit 451","Ray Bradbury","123",true);
+console.log(farenheit.info());
+
+function BadBook(title, author, pages, isRead, comment){
+    Book.call(this, title, author, pages, isRead, comment)
+    this.comment = comment;
+}
+Object.setPrototypeOf(BadBook.prototype, Book.prototype);
+BadBook.prototype.badMouth = function() {
+    return `What i really think about ${this.title} by ${this.author} is: ${this.comment}. Why is it ${this.pages} pages long? The mystery remains.`;
+}
+
+const harryPotter = new BadBook("Harry Potter & All Of His Boring Books", "An English Woman", "infinite",false,"I wouldn't touch this book.");
 BadBook.prototype = Object.create(Book.prototype);
 
-harryPotter.title = "Harry Potter & All Of His Boring Books";
-harryPotter.author = "An English Woman";
-harryPotter.pages = "infinite";
-harryPotter.isRead = false;
-
 console.log( harryPotter.info() );
-
+console.log(harryPotter.badMouth());
