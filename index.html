@@ -5,8 +5,155 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Constructor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+
+        <div class="header" id="header">
+          <div class="search">
+            <img src="images/search1.svg" alt="Search">
+            <input type="search">
+          </div>
+          
+          <div class="menu">
+            <ul>
+              <li><img src="images/notification1.svg" alt="Notifications"></li>
+              <li><img src="images/heart1.svg" alt="Heart"></li>
+              <li><img src="images/bookmark2.svg" alt="Bookmarks"></li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="sidebar">
+            <div class="logo">
+                <ul>
+                    <li><img id="logo-img" src="images/mommas logo.svg" alt="The one an only mommas logo!"></li>
+                </ul>
+                <ul>
+                    <li>Big Momma's Opinionated Library</li>
+              </ul>
+            </div>
+            <div class="user-links">
+                <ul class="images">
+                    
+                    <li><img src="images/home1.png" alt="Home"></li>
+                    <li><img src="images/Profile1.svg" alt="Profile"></li>
+                    <li><img src="images/message1.svg" alt="Messages"></li>
+                    <li><img src="images/history1.svg" alt="History"></li>
+                    <li><img src="images/tasks1.svg" alt="Tasks"></li>
+                    <li><img src="images/communities1.svg" alt="Communities"></li>
+    
+                </ul>
+                <ul class="words">
+                    
+                    <li>Home</li>
+                    <li>Profile</li>
+                    <li>Messages</li>
+                    <li>History</li>
+                    <li>Tasks</li>
+                    <li>Communities</li>
+    
+              </ul>
+              
+            </div>
+            <div class="system-links">
+                <ul class="images">
+                    <li><img src="images/settings1.svg" alt="Settings"></li>
+                    <li><img src="images/support1.svg" alt="Support"></li>
+                    <li><img src="images/Privacy1.svg" alt="Privacy"></li>
+                </ul>
+                <ul class="words">
+                    <li>Settings</li>
+                    <li>Support</li>
+                    <li>Privacy</li>
+              </ul>
+            </div>
+    
+        </div>
+    
+        <div class="nav">
+          <div class="user">
+              <img src="images/user-profile.jpg" alt="Profile Pic">
+              <p class="hi">Welcome back!</p>
+              <p class="name">Momma's Little Book Reviews <em>@mommasbooks</em></p>
+          </div>
+          <button>New</button>
+          <button>Upload</button>
+          <button>Share</button>
+        
+        </div>
+    
+        <div class="main-content">
+            <div class="projects" id="projects">
+                <h3>Your Projects</h3>
+                <div class="cards" id="library">
+                    
+                    
+                    <!-- <div class="card"> FOR REFERENCE
+                        <span class="img-cont" ><img id="one" src="images/food1.jpg" alt="book image" height="20px"></span>
+                        <div class="words">
+                            <p class="title"></p>
+                            <p class="author"></p><p class="pages"></p><button class="read"></button><button class="remove"></button>
+                            <p class="review"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card"> COOKING DESIGN REFERENCE
+                        <span class="img-cont" ><img id="six" src="images/food6.jpg" alt="food image" height="20px"></span>
+                        <div class="words">
+                            <p class="title">Lazy Sunday's Special</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <div class="right-bar">
+                <div class="announcements">
+                    <h3>Announcements</h3>
+                    <div class="side-data">
+                        <div class="card">
+                            <h5>Site Maintenance</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                        </div>
+                        <div class="card">
+                            <h5>Community Share Day</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                        </div>
+                        <div class="card">
+                            <h5>Updated Privacy Policy</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="trending">
+                    <h3>Trending</h3>
+                    <div class="side-data">
+                        <div class="user">
+                            <span class="img-cont" ><img id="spaghetti" src="images/user-spaghetti.jpg" alt="user image" height="20px"></span>
+                            <p>@thespaghettiincident</p>
+                            <p>Pasta Books for the Gangsta Cooks</p>
+                        </div>
+                        <div class="user">
+                            <span class="img-cont" ><img id="bananas" src="images/user-bananas.jpg" alt="user image" height="20px"></span>
+                            <p>@bookkong</p>
+                            <p>Bananas for Books</p>
+                        </div>
+                        <div class="user">
+                            <span class="img-cont" ><img id="dreams" src="images/user-dreams.jpg" alt="user image" height="20px"></span>
+                            <p>@tastydreams</p>
+                            <p>No worries in stories <3</p>
+                        </div>
+                        <div class="user">
+                            <span class="img-cont" ><img id="maestruli" src="images/user-maestruli.jpg" alt="user image" height="20px"></span>
+                            <p>@lilmaestruli</p>
+                            <p>Hard books for hard people</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
 
     <script src="code.js"></script>
 </body>
