@@ -151,10 +151,13 @@ function fillCards(myLibrary){
 
         const readButton = document.createElement("button");
         readButton.classList.add("read-button");
+        readButton.dataset.element = i;
         if (myBook.isRead){
             readButton.textContent = "Read!";
+            readButton.classList.add("y");
         }else{
             readButton.textContent = "Not Read";
+            readButton.classList.add("n");
         }
         wordsContainer.appendChild(readButton);
 
@@ -185,10 +188,28 @@ deleteBookButtons.forEach((deleteButton) => {
     });
 });
 
+const readBookButtons = document.querySelectorAll(".read-button");
+readBookButtons.forEach((readButton)=>{
+    readButton.addEventListener("click",()=>{
+        //button toggle design append CSS class
+        //change book state in object
+        const selectedBookPointer = readButton.getAttribute("data-element");
+        if (myLibrary[selectedBookPointer].isRead == true){
+            myLibrary[selectedBookPointer].isRead = false;
+            readButton.classList.replace("y","n");
+            readButton.textContent= "Not Read";
+        }else{
+            myLibrary[selectedBookPointer].isRead = true;
+            readButton.classList.replace("n","y");
+            readButton.textContent= "Read!";
+        }
+        
+    });
+});
 
 /* Pending
 -JS Delete Book Button DONE
 -JS Add Book Button
--JS Read/Not Read Book Button
+-JS Read/Not Read Book Button DONE
 -CSS Styling
 */
