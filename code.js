@@ -64,21 +64,55 @@ let myLibrary = [
         img:"put the URL link here",
     },
     {
-        title:"1984",
-        author:"George Orwell",
-        pages:"150aprox.",
+        title:"Metamorfosis",
+        author:"Franz Kafka",
+        pages:"125",
         isRead:true,
-        review:"I love the way it builds up and breaks you. The theme is way too relevant in todays world. Momma likey! 10 out 10 anarchy cookies.",
+        review:"I've always seen my husband as a cockroach, and i was reading this to ignore him, so... 0 out of 1 happily married couples.",
         img:"put the URL link here",
     },
-    // Add some Books master.
+    {
+        title:"Más liviano que el aire",
+        author:"Federico Jeanmaire",
+        pages:"238",
+        isRead:true,
+        review:"Old woman has fun? Count me in! 6 out of 6 people is the total of them.",
+        img:"put the URL link here",
+    },
+    {
+        title:"Le Petit Prince",
+        author:"Antoine de Saint-Exupéry",
+        pages:"94",
+        isRead:true,
+        review:"I would like it to continue forever and ever. Read it to mi nephew a few times, he said GRANDMA PLEASE GO AWAY IM WORKING, he is so lovely.",
+        img:"put the URL link here",
+    },
+    {
+        title:"Brave New World",
+        author:"Aldous Huxley",
+        pages:"211",
+        isRead:true,
+        review:"Are you who you are by choice or by systematic engineering? Bip Bup. Let's hope we don't get to this, great book though. 2/6 is todays date. Want a cookie score? Then send me ingredients!",
+        img:"put the URL link here",
+    },
+    {
+        title:"1985",
+        author:"Georger Orwellier",
+        pages:"More than 150",
+        isRead:true,
+        review:"I hate how it is just 1984 with the verbs adjusted to be better than it's predecesor. 10 out 10 ironic invisible cookies.",
+        img:"put the URL link here",
+    },
 ];
 
 function fillCards(myLibrary){
+    let i = 0;
     myLibrary.forEach(myBook => {
+        
         //fill the cards, be one with the library
         const card = document.createElement("div");
         card.classList.add('card');
+        card.dataset.delete = i;
         cardsContainer.appendChild(card);
 
         const imgContainer = document.createElement("span");
@@ -126,8 +160,11 @@ function fillCards(myLibrary){
 
         const removeBookButton = document.createElement("button");
         removeBookButton.classList.add("remove");
-        removeBookButton.textContent = "Remove Book"
+        removeBookButton.dataset.delete = i;
+        removeBookButton.textContent = "Remove Book";
         wordsContainer.appendChild(removeBookButton);
+
+        i++;
     });
 }
 
@@ -135,3 +172,23 @@ const cardsContainer = document.querySelector('#library');
 
 fillCards(myLibrary);
 
+const deleteBookButtons = document.querySelectorAll(".remove");
+deleteBookButtons.forEach((deleteButton) => {
+    deleteButton.addEventListener("click",() =>{
+        const deletedBookPointer = deleteButton.getAttribute("data-delete");
+        myLibrary.splice(deletedBookPointer,1); //remove from object
+        const cardLibrary = document.querySelector("#library");
+        cardLibrary.removeChild(deleteButton.parentElement.parentElement); //remove card from library
+        //This method lacks a redefinition of data-delete elements, 
+        //so new elements should append taking the highest data- element into account
+        
+    });
+});
+
+
+/* Pending
+-JS Delete Book Button DONE
+-JS Add Book Button
+-JS Read/Not Read Book Button
+-CSS Styling
+*/
