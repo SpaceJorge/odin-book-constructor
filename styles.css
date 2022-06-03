@@ -435,3 +435,8 @@ h3{
     border-width: 2px;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
   }
+
+  #add-book{
+    width: fit-content;
+    padding: 3%;
+  }

@@ -207,6 +207,10 @@ readBookButtons.forEach((readButton)=>{
     });
 });
 
+const addBook = document.querySelector("#add-book");
+//find a way to add an absolute positioned div as a pop-up to fill, 
+//and dont forget to add a cancel button
+
 /* Pending
 -JS Delete Book Button DONE
 -JS Add Book Button
