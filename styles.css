@@ -440,3 +440,81 @@ h3{
     width: fit-content;
     padding: 3%;
   }
+
+  .popup{
+    position: fixed;
+    margin-top: 5vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    width: 60%;
+    border-radius: 36px;
+    border-width: 24px;
+    border-style: double;
+    border-color: rgb(255 239 44 / 70%);
+    
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+
+    background-color: rgb(122 0 0 / 100%);
+    color: black;
+    font-family: mommas-font;
+    
+  }
+  .popup *{
+    text-shadow: 1px 1px 2px rgb(255 239 44 / 70%);
+    color: white;
+  }
+  .popup h3 {
+    text-align: center;
+    font-size: x-large;
+    display: inline;
+  }
+  #cancel{
+    position: fixed;
+    right: auto;
+    text-align: end;
+    margin-left: 10%;
+    padding: 0.8%;
+    background-color: black;
+    border-style: inset;
+    font-size: larger;
+  }
+  .popup input{
+    border-radius: 12px;
+    border-width: 8px;
+    border-style: dashed;
+    border-color: white;
+    /* background-color: rgb(255 239 44 / 70%); */
+    font-weight: bold;
+    width: 20vw;
+    text-shadow: 1px 1px 2px rgba(255, 237, 44, 0.308);
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+  }
+  .popup input[type="radio"]{
+    width: fit-content;
+  }
+  .popup label{
+    margin: 0rem 1rem;
+  }
+  .popup button{
+    padding: 3%;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: white;
+    background-color: #d7a81e;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    font-size: larger;
+    font-family: 'mommas-font';
+  }
+  .popup textarea{
+    min-height: 20vh;
+    min-width: 20vw;
+    border-radius: 12px;
+    border-width: 8px;
+    border-style: dashed;
+    border-color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 237, 44, 0.308);
+  }
+

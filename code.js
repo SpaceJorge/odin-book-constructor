@@ -170,6 +170,163 @@ function fillCards(myLibrary){
         i++;
     });
 }
+function addPopup(){
+    const popup = document.createElement("div");
+    popup.classList.add('popup');
+    htmlContainer.appendChild(popup);
+
+    const formTitle = document.createElement("h3");
+    formTitle.classList.add("formTitle");
+    formTitle.textContent = "Adding a new opinionated book review!"
+    popup.appendChild(formTitle);
+
+    const buttonCancel = document.createElement("button");
+    buttonCancel.classList.add("button");
+    buttonCancel.id="cancel";
+    buttonCancel.type = "button";
+    buttonCancel.textContent = "X"
+    popup.appendChild(buttonCancel);
+
+    const formContainer = document.createElement("form");
+    formContainer.classList.add("form");
+    formContainer.action = "code.js";
+    formContainer.method = "post";
+    popup.appendChild(formContainer);
+
+    const divBlockOne = document.createElement("div");
+    divBlockOne.classList.add("block");
+    formContainer.appendChild(divBlockOne);
+
+        const labelTitle = document.createElement("label");
+        labelTitle.htmlFor = "bookTitle";
+        labelTitle.textContent = "Book Title:"
+        divBlockOne.appendChild(labelTitle);
+
+        const inputTitle = document.createElement("input");
+        inputTitle.classList.add("input")
+        inputTitle.id = "bookTitle";
+        inputTitle.name = "bookTitle";
+        inputTitle.type="text";
+        inputTitle.value="";
+        inputTitle.placeholder="Momma Potter & The New Books";
+        divBlockOne.appendChild(inputTitle);
+
+    const divBlockTwo = document.createElement("div");
+    divBlockTwo.classList.add("block");
+    formContainer.appendChild(divBlockTwo);
+
+        const labelAuthor = document.createElement("label");
+        labelAuthor.htmlFor = "bookAuthor";
+        labelAuthor.textContent = "Book Author:"
+        divBlockTwo.appendChild(labelAuthor);
+
+        const inputAuthor = document.createElement("input");
+        inputAuthor.classList.add("input")
+        inputAuthor.id = "bookAuthor";
+        inputAuthor.name = "bookAuthor";
+        inputAuthor.type="text";
+        inputAuthor.value="";
+        inputAuthor.placeholder="Englandesha Womanesha"
+        divBlockTwo.appendChild(inputAuthor);
+
+    const divBlockThree = document.createElement("div");
+    divBlockThree.classList.add("block");
+    formContainer.appendChild(divBlockThree);
+
+        const labelPages = document.createElement("label");
+        labelPages.htmlFor = "bookPages";
+        labelPages.textContent = "Book Pages:";
+        divBlockThree.appendChild(labelPages);
+
+        const inputPages = document.createElement("input");
+        inputPages.classList.add("input")
+        inputPages.id = "bookPages";
+        inputPages.name = "bookPages";
+        inputPages.type="text";
+        inputPages.value="";
+        inputPages.placeholder="A million boring pages long"
+        divBlockThree.appendChild(inputPages);
+
+    const divBlockFour = document.createElement("div");
+    divBlockFour.classList.add("block");
+    formContainer.appendChild(divBlockFour);
+
+        const pIsRead = document.createElement("p");
+        pIsRead.htmlFor = "bookIsRead";
+        pIsRead.textContent = "Have you read this?"
+        divBlockFour.appendChild(pIsRead);
+
+        const labelRead = document.createElement("label");
+        labelRead.htmlFor = "bookIsRead";
+        labelRead.textContent = "Read";
+        divBlockFour.appendChild(labelRead);
+
+        const radioRead = document.createElement("input");
+        radioRead.classList.add("input")
+        radioRead.id = "bookRead";
+        radioRead.name = "bookIsRead";
+        radioRead.type="radio";
+        radioRead.value=true;
+        divBlockFour.appendChild(radioRead);
+
+        const labelNotRead = document.createElement("label");
+        labelNotRead.htmlFor = "bookIsRead";
+        labelNotRead.textContent = "Not Read";
+        divBlockFour.appendChild(labelNotRead);
+
+        const radioNotRead = document.createElement("input");
+        radioNotRead.classList.add("input")
+        radioNotRead.id = "bookNotRead";
+        radioNotRead.name = "bookIsRead";
+        radioNotRead.type="radio";
+        radioNotRead.value=false;
+        radioNotRead.checked=true;
+        divBlockFour.appendChild(radioNotRead);
+
+    const divBlockFive = document.createElement("div");
+    divBlockFive.classList.add("block");
+    formContainer.appendChild(divBlockFive);
+
+        const labelImage = document.createElement("label");
+        labelImage.htmlFor = "bookImage";
+        labelImage.textContent = "Book Image URL:";
+        divBlockFive.appendChild(labelImage);
+
+        const inputImage = document.createElement("input");
+        inputImage.classList.add("input")
+        inputImage.id = "bookImage";
+        inputImage.name = "bookImage";
+        inputImage.type="url";
+        inputImage.value="";
+        inputImage.placeholder="link.com/images/yourimage.jpg";
+        divBlockFive.appendChild(inputImage);
+
+    const divBlockSix = document.createElement("div");
+    divBlockSix.classList.add("block");
+    formContainer.appendChild(divBlockSix);
+
+        const labelReview = document.createElement("label");
+        labelReview.htmlFor = "bookImage";
+        labelReview.textContent = "Your Opinionated(tm) Book Review:";
+        divBlockSix.appendChild(labelReview);
+
+        const textAreaReview = document.createElement("textarea");
+        textAreaReview.classList.add("input")
+        textAreaReview.id = "bookReview";
+        textAreaReview.name = "bookReview";
+        textAreaReview.placeholder="I believe this book to be great as a paper-weight or for keeping a table in balance. 10 out of 10 would use to start a fire.";
+        divBlockSix.appendChild(textAreaReview);
+
+    const divBlockSeven = document.createElement("div");
+    divBlockSeven.classList.add("block");
+    formContainer.appendChild(divBlockSeven);
+
+        const buttonSubmit = document.createElement("button");
+        buttonSubmit.classList.add("button");
+        buttonSubmit.type = "submit";
+        buttonSubmit.textContent = "Add New Book!"
+        divBlockSeven.appendChild(buttonSubmit);
+}
 
 const cardsContainer = document.querySelector('#library');
 
@@ -206,10 +363,35 @@ readBookButtons.forEach((readButton)=>{
         
     });
 });
-
+const htmlContainer = document.querySelector(".container");
 const addBook = document.querySelector("#add-book");
+
+addBook.addEventListener("click",()=>{
+    //Add a pop up form to input new Book Review data
+    addPopup();
+
+        
+    /*
+    div.popup
+        h3.formTitle
+        form.newBook
+            div.block
+                label.booktitle
+                input.bookTitle
+            input.bookAuthor
+            input.bookPages
+            input.bookIsRead
+            input.bookReview
+            input.bookImageLink
+            button.sendForm
+            button.cancel
+    */
+});
+
 //find a way to add an absolute positioned div as a pop-up to fill, 
 //and dont forget to add a cancel button
+
+
 
 /* Pending
 -JS Delete Book Button DONE
