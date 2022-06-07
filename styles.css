@@ -7,8 +7,10 @@
     text-shadow: 1px 1px 2px pink;
   }
 :root{
-    --main-color: rgba(53, 53, 247, 0.884);
-
+    --main-color: rgb(122 0 0 / 80%);
+    --secondary-color: #e5dfb7;
+    /*--important-color: rgba(255, 255, 0, 0.747);*/
+    --important-color: rgb(255 184 6);
 }
 h3{
   display: block;
@@ -133,12 +135,13 @@ h3{
   .sidebar .logo{
     font-family: mommas-font,sans-serif;
     font-size: xx-large;
-    background-color: #ffff41;
+    background-color: var(--secondary-color);
     color: var(--main-color);
     text-shadow: 1px 1px 2px pink;
     border: 15px;
-    border-style: ridge;
-    border-color: rgb(255 6 6 / 69%);
+    border-style: double;
+    border-radius: 12px;
+    border-color: rgb(255 184 6);
     /*border-right: 10px;
     border-right-style: groove;
     border-right-color: rgb(211, 0, 0);
@@ -243,7 +246,7 @@ h3{
   }
   .nav button{
     /*background-color: rgba(46, 44, 44, 0.507);*/
-    background-color: rgb(255 82 24 / 80%);
+    background-color: var(--main-color);/*rgb(255 82 24 / 80%);*/
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     /*border: 4px solid var(--main-color);*/
     color: white;
@@ -262,7 +265,7 @@ h3{
   
   
   .main-content {
-    background-color: #bccbde;
+    background-color: var(--secondary-color);
     font-family: mommas-font, sans-serif;
     font-size: 125%;
     grid-area: content;
@@ -320,7 +323,8 @@ h3{
     align-items: center;
 
     border-radius: 42px;
-    border-left-color: rgba(255, 255, 0, 0.747);
+    /*border-left-color: rgba(255, 255, 0, 0.747);*/
+    border-left-color: var(--important-color);
     border-left-width: 20px;
     border-left-style: double;
   }
@@ -411,29 +415,30 @@ h3{
     border-radius: 8px;
     border-style: dashed;
     border-color: rgba(0, 0, 0, 0.6);
-    border-width: 2px;
+    border-width: 1px;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
   }
   .y{
-    background-color: rgba(153, 255, 0, 0.685);
-    color: black;
-    text-shadow: 1px 1px 2px white;
+    background-color: rgba(78, 126, 7, 0.863);
+    color: white;
+    text-shadow: 1px 1px 2px black;
   }
   .n{
-    background-color: rgba(255, 0, 51, 0.733);
+    background-color: rgba(255, 0, 51, 0.5);
     color: white;
     text-shadow: 1px 1px 2px black;
   }
   .remove{
-    background-color: black;
+    background-color: var(--main-color);
     color: white;
     text-shadow: 1px 1px 2px black;
     padding: 3%;
     border-radius: 8px;
     border-style: dashed;
     border-color: rgba(255, 255, 255, 0.801);
-    border-width: 2px;
+    border-width: 1px;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+    margin-left: 1%;
   }
 
   #add-book{
@@ -484,6 +489,7 @@ h3{
     border-style: dashed;
     border-color: white;
     /* background-color: rgb(255 239 44 / 70%); */
+    color: black;
     font-weight: bold;
     width: 20vw;
     text-shadow: 1px 1px 2px rgba(255, 237, 44, 0.308);
@@ -514,6 +520,7 @@ h3{
     border-width: 8px;
     border-style: dashed;
     border-color: white;
+    color: black;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 237, 44, 0.308);
   }

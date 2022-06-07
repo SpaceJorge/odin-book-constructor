@@ -177,7 +177,7 @@ function addPopup(){
 
     const formTitle = document.createElement("h3");
     formTitle.classList.add("formTitle");
-    formTitle.textContent = "Adding a new opinionated book review!"
+    formTitle.textContent = "Adding a new opinionated book review!";
     popup.appendChild(formTitle);
 
     const buttonCancel = document.createElement("button");
@@ -186,6 +186,9 @@ function addPopup(){
     buttonCancel.type = "button";
     buttonCancel.textContent = "X"
     popup.appendChild(buttonCancel);
+    buttonCancel.addEventListener("click", () =>{
+        htmlContainer.removeChild(popup);
+    });
 
     const formContainer = document.createElement("form");
     formContainer.classList.add("form");
@@ -207,7 +210,7 @@ function addPopup(){
         inputTitle.id = "bookTitle";
         inputTitle.name = "bookTitle";
         inputTitle.type="text";
-        inputTitle.value="";
+        //inputTitle.value="";
         inputTitle.placeholder="Momma Potter & The New Books";
         divBlockOne.appendChild(inputTitle);
 
@@ -225,7 +228,7 @@ function addPopup(){
         inputAuthor.id = "bookAuthor";
         inputAuthor.name = "bookAuthor";
         inputAuthor.type="text";
-        inputAuthor.value="";
+        //inputAuthor.value="";
         inputAuthor.placeholder="Englandesha Womanesha"
         divBlockTwo.appendChild(inputAuthor);
 
@@ -243,7 +246,7 @@ function addPopup(){
         inputPages.id = "bookPages";
         inputPages.name = "bookPages";
         inputPages.type="text";
-        inputPages.value="";
+        //inputPages.value="";
         inputPages.placeholder="A million boring pages long"
         divBlockThree.appendChild(inputPages);
 
@@ -297,7 +300,7 @@ function addPopup(){
         inputImage.id = "bookImage";
         inputImage.name = "bookImage";
         inputImage.type="url";
-        inputImage.value="";
+        //inputImage.value="";
         inputImage.placeholder="link.com/images/yourimage.jpg";
         divBlockFive.appendChild(inputImage);
 
@@ -306,7 +309,7 @@ function addPopup(){
     formContainer.appendChild(divBlockSix);
 
         const labelReview = document.createElement("label");
-        labelReview.htmlFor = "bookImage";
+        labelReview.htmlFor = "bookReview";
         labelReview.textContent = "Your Opinionated(tm) Book Review:";
         divBlockSix.appendChild(labelReview);
 
@@ -323,9 +326,35 @@ function addPopup(){
 
         const buttonSubmit = document.createElement("button");
         buttonSubmit.classList.add("button");
-        buttonSubmit.type = "submit";
-        buttonSubmit.textContent = "Add New Book!"
+        buttonSubmit.type = "button"; //For real back end should be "submit"
+        buttonSubmit.textContent = "Add New Book!";
         divBlockSeven.appendChild(buttonSubmit);
+        buttonSubmit.addEventListener("click", () =>{
+            
+            const newTitle = document.getElementById("bookTitle").value;
+            const newAuthor = document.getElementById("bookAuthor").value;
+            const newPages = document.getElementById("bookPages").value;
+            const newIsRead = document.getElementById("bookRead").checked; //if it is checked then its true its read.
+            const newImage = document.getElementById("bookImage").value;
+            const newReview = document.getElementById("bookReview").value;
+            if ( (newTitle == "") || (newAuthor == "") || (newPages == "") || (newImage == "") || (newReview == "") ) {
+                alert("Momma only takes fully opinionated reviews, you can't just leave blank fields, jazz it up a little deary.");
+                
+            }else{
+                let newBook = new LibraryBook;
+                newBook.title = newTitle;
+                newBook.author = newAuthor;
+                newBook.pages = newPages;
+                newBook.isRead = newIsRead;
+                newBook.img = newImage;
+                newBook.review = newReview;
+                addBookToLibrary(newBook);
+                console.log(myLibrary);
+                fillCards([newBook]);
+                htmlContainer.removeChild(popup);
+            }
+            
+        });
 }
 
 const cardsContainer = document.querySelector('#library');
