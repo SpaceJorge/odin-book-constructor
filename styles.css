@@ -202,22 +202,43 @@ h3{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
   .nav  {
-    background-image: url(images/user-banner.jpg);
+    /*background-image: url(images/library.jpg);
+    
     background-position: top;
-    background-size: cover;
-    background-color: white;
+    background-size: cover;*/
+    position: relative;
+    /*background-color: white;*/
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     
+
+    
+  }
+  .nav::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(images/library.jpg);
+    /*background-position: top;
+    background-size: cover;*/
+    filter: sepia(80%);
+    /*object-position: 0px -85px;*/
+  }
+  .nav-inside{
+    position: relative;
+    padding: 0;
+    margin: 0;
+
     grid-area: nav;
     display:grid;
     grid-template-columns: 1fr;
     grid-auto-flow: column;
     gap:1%;
-    
   }
   .nav .user{
     font-size: x-large;
-    
+    text-shadow: 1px 1px 2px black;
+    font-weight: bolder;
     padding: 0px;
     align-self: stretch;
     justify-self: start;
@@ -229,6 +250,9 @@ h3{
     "img name";
 
   }
+  .nav em{
+    text-shadow: 1px 1px 2px black;
+  }
   .nav img{
     height:5rem;
     width: 6rem;
@@ -238,11 +262,15 @@ h3{
   .nav .hi{
     grid-area: hi;
     font-family: mommas-font;
+    color:white;
+    text-shadow: 1px 1px 2px black;
     margin-top: 7px;
   }
   .nav .name{
     grid-area: name;
     font-family: fancy-font;
+    color:white;
+    text-shadow: 1px 1px 2px black;
   }
   .nav button{
     /*background-color: rgba(46, 44, 44, 0.507);*/

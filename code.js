@@ -61,7 +61,7 @@ let myLibrary = [
         pages:"150aprox.",
         isRead:true,
         review:"I love the way it builds up and breaks you. The theme is way too relevant in todays world. Momma likey! 10 out 10 anarchy cookies.",
-        img:"put the URL link here",
+        img:"images/1984.png",
     },
     {
         title:"Metamorfosis",
@@ -69,7 +69,7 @@ let myLibrary = [
         pages:"125",
         isRead:true,
         review:"I've always seen my husband as a cockroach, and i was reading this to ignore him, so... 0 out of 1 happily married couples.",
-        img:"put the URL link here",
+        img:"images/metamorfosis.jpeg",
     },
     {
         title:"Más liviano que el aire",
@@ -77,7 +77,7 @@ let myLibrary = [
         pages:"238",
         isRead:true,
         review:"Old woman has fun? Count me in! 6 out of 6 people is the total of them.",
-        img:"put the URL link here",
+        img:"images/maslivianoqueelaire.jpg",
     },
     {
         title:"Le Petit Prince",
@@ -85,7 +85,7 @@ let myLibrary = [
         pages:"94",
         isRead:true,
         review:"I would like it to continue forever and ever. Read it to mi nephew a few times, he said GRANDMA PLEASE GO AWAY IM WORKING, he is so lovely.",
-        img:"put the URL link here",
+        img:"images/lepetitprince.jpg",
     },
     {
         title:"Brave New World",
@@ -93,7 +93,7 @@ let myLibrary = [
         pages:"211",
         isRead:true,
         review:"Are you who you are by choice or by systematic engineering? Bip Bup. Let's hope we don't get to this, great book though. 2/6 is todays date. Want a cookie score? Then send me ingredients!",
-        img:"put the URL link here",
+        img:"images/bravenewworld.jpg",
     },
     {
         title:"1985",
@@ -101,7 +101,7 @@ let myLibrary = [
         pages:"More than 150",
         isRead:true,
         review:"I hate how it is just 1984 with the verbs adjusted to be better than it's predecesor. 10 out 10 ironic invisible cookies.",
-        img:"put the URL link here",
+        img:"images/1985.jpg",
     },
 ];
 
