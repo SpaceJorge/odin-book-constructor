@@ -301,7 +301,7 @@ function addPopup(){
         inputImage.name = "bookImage";
         inputImage.type="url";
         //inputImage.value="";
-        inputImage.placeholder="link.com/images/yourimage.jpg";
+        inputImage.placeholder="https://link.com/images/yourimage.jpg";
         divBlockFive.appendChild(inputImage);
 
     const divBlockSix = document.createElement("div");
