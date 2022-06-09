@@ -60,11 +60,11 @@ let myLibrary = [
         author:"George Orwell",
         pages:"150aprox.",
         isRead:true,
-        review:"I love the way it builds up and breaks you. The theme is way too relevant in todays world. Momma likey! 10 out 10 anarchy cookies.",
+        review:"I love the way it builds up and breaks you. The theme is way too relevant in today's world. Momma likey! 10 out 10 anarchy cookies.",
         img:"images/1984.png",
     },
     {
-        title:"Metamorfosis",
+        title:"The Metamorfosis",
         author:"Franz Kafka",
         pages:"125",
         isRead:true,
@@ -92,7 +92,7 @@ let myLibrary = [
         author:"Aldous Huxley",
         pages:"211",
         isRead:true,
-        review:"Are you who you are by choice or by systematic engineering? Bip Bup. Let's hope we don't get to this, great book though. 2/6 is todays date. Want a cookie score? Then send me ingredients!",
+        review:"Are you who you are by choice or by systematic engineering? Beep Boop. Let's hope we don't get to this, great book though. 2/6 is todays date. Want a cookie score? Then send me ingredients!",
         img:"images/bravenewworld.jpg",
     },
     {
